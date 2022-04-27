@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  ravendb:
+    image: ravendb/ravendb:5.3-ubuntu-arm64v8-latest
+    environment:
+      - RAVEN_Setup_Mode=None
+      - RAVEN_License_Eula_Accepted=true
+      - RAVEN_Security_UnsecuredAccessAllowed=PublicNetwork
+      - RAVEN_ARGS=--log-to-console
+    ports:
+      - 8080:8080
+      - 38888:38888
